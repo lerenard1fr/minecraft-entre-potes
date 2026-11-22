@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Entre Potes - Rejoindre le serveur</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/logo-64.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><img src="images/logo-128.png" srcset="images/logo-64.png 64w, images/logo-128.png 128w, images/logo-256.png 256w, images/logo-512.png 512w" sizes="(max-width: 600px) 48px, 64px" alt="Logo Minecraft Entre Potes" class="logo"> Minecraft Entre Potes</h1>
+            <p class="tagline">Serveur privé entre potes — Java & Bedrock</p>
+            <nav>
+                <a href="index.html" class="active">Rejoindre</a>
+                <a href="infos.html">Infos</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="server-status">
+                <h2>Adresse du serveur</h2>
+                <div class="ip-box">
+                    <span id="server-ip">play.laconfreriefr.com</span>
+                    <button class="copy-btn" data-copy="play.laconfreriefr.com" title="Copier l'adresse">📋</button>
+                </div>
+                <p class="note">✅ Comptes crackés acceptés</p>
+            </section>
+
+            <section class="platforms">
+                <div class="card java">
+                    <div class="card-header">
+                        <span class="icon">☕</span>
+                        <h3>Java Edition</h3>
+                    </div>
+                    <p>Version <strong>26.3</strong> (dernière version)</p>
+                    <ol>
+                        <li>Ouvre le launcher Minecraft Java.</li>
+                        <li>Lance le jeu en version <strong>26.3</strong>.</li>
+                        <li>Va dans <strong>Multijoueur → Ajouter un serveur</strong>.</li>
+                        <li>Entre l'adresse :</li>
+                    </ol>
+                    <div class="code-box">
+                        <code>play.laconfreriefr.com</code>
+                        <button class="copy-btn" data-copy="play.laconfreriefr.com" title="Copier">📋</button>
+                    </div>
+                    <p class="port">Port par défaut : <strong>25565</strong></p>
+                </div>
+
+                <div class="card bedrock">
+                    <div class="card-header">
+                        <span class="icon">📱</span>
+                        <h3>Bedrock Edition</h3>
+                    </div>
+                    <p>Pour MCPE / Console / Windows 10</p>
+                    <ol>
+                        <li>Ouvre Minecraft Bedrock.</li>
+                        <li>Va dans l'onglet <strong>Serveurs</strong>.</li>
+                        <li>Ajoute un serveur manuellement.</li>
+                        <li>Entre l'adresse et le port :</li>
+                    </ol>
+                    <div class="code-box">
+                        <code>play.laconfreriefr.com:25566</code>
+                        <button class="copy-btn" data-copy="play.laconfreriefr.com:25566" title="Copier">📋</button>
+                    </div>
+                    <p class="port">Port : <strong>25566</strong></p>
+                </div>
+            </section>
+
+            <section class="cracked-info">
+                <h2>🔐 Connexion au serveur</h2>
+                <p>Au <strong>premier lancement</strong>, enregistre-toi avec :</p>
+                <div class="code-box">
+                    <code>/register &lt;mot de passe&gt; &lt;mot de passe&gt;</code>
+                    <button class="copy-btn" data-copy="/register " title="Copier">📋</button>
+                </div>
+                <p>Si tu as un <strong>compte acheté</strong> (officiel), fais :</p>
+                <div class="code-box">
+                    <code>/premium</code>
+                    <button class="copy-btn" data-copy="/premium" title="Copier">📋</button>
+                </div>
+                <p>Comme ça, tu n'auras <strong>plus besoin de taper le mot de passe</strong>.</p>
+                <p>Tu as <strong>oublié ton mot de passe</strong> ? Ajoute un email :</p>
+                <div class="code-box">
+                    <code>/email add &lt;ton email&gt; &lt;ton email&gt;</code>
+                    <button class="copy-btn" data-copy="/email add " title="Copier">📋</button>
+                </div>
+            </section>
+
+            <section class="rules">
+                <h2>📜 Règles du serveur</h2>
+                <ul>
+                    <li><strong>Respecte les autres.</strong></li>
+                    <li><strong>Pas de triche.</strong></li>
+                    <li><strong>Amuse-toi.</strong></li>
+                </ul>
+            </section>
+
+            <section class="faq">
+                <h2>❓ FAQ / Problèmes courants</h2>
+                <div class="faq-item">
+                    <h3>Je ne trouve pas le serveur</h3>
+                    <p>Vérifie que tu utilises la bonne édition (Java ou Bedrock) et le bon port. Bedrock utilise le port <strong>25566</strong>.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>« Invalid session » ou connexion refusée</h3>
+                    <p>Si tu es en compte cracké, vérifie que le launcher est bien configuré pour un pseudo sans espaces ni caractères spéciaux.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>J'ai oublié mon mot de passe</h3>
+                    <p>Si tu as ajouté un email avec <code>/email add</code>, tu peux le récupérer. Sinon, demande à l'admin.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Je joue sur Bedrock et je ne vois pas le serveur</h3>
+                    <p>Ajoute le serveur manuellement avec l'adresse <code>play.laconfreriefr.com</code> et le port <code>25566</code>.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Minecraft Entre Potes — Fait entre potes 🦊</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const text = this.getAttribute('data-copy');
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = this.textContent;
+                    this.textContent = '✅';
+                    setTimeout(() => this.textContent = original, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Entre Potes - Infos</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="images/logo-64.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><img src="images/logo-128.png" srcset="images/logo-64.png 64w, images/logo-128.png 128w, images/logo-256.png 256w, images/logo-512.png 512w" sizes="(max-width: 600px) 48px, 64px" alt="Logo Minecraft Entre Potes" class="logo"> Minecraft Entre Potes</h1>
+            <p class="tagline">Serveur privé entre potes — Java & Bedrock</p>
+            <nav>
+                <a href="index.html">Rejoindre</a>
+                <a href="infos.html" class="active">Infos</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="live-status">
+                <h2>📡 Statut du serveur</h2>
+                <div id="status-content">
+                    <p class="loading">Chargement...</p>
+                </div>
+            </section>
+
+            <section class="plugins">
+                <h2>🧩 Plugins installés</h2>
+                <ul class="plugin-list">
+                    <li><strong>AuthMe</strong> — connexion avec mot de passe</li>
+                    <li><strong>LuckPerms</strong> — gestion des permissions</li>
+                    <li><strong>WorldEdit</strong> — édition du monde (admin)</li>
+                    <li><strong>WorldGuard</strong> — protection des zones</li>
+                    <li><strong>Geyser-Spigot</strong> — permet aux joueurs Bedrock de rejoindre</li>
+                    <li><strong>floodgate</strong> — support des comptes Bedrock</li>
+                    <li><strong>LPCF</strong> — chat personnalisé</li>
+                    <li><strong>CommandAPI</strong> — API pour les commandes</li>
+                    <li><strong>packetevents</strong> — gestion des paquets</li>
+                </ul>
+            </section>
+
+            <section class="backup-info">
+                <h2>💾 Sauvegardes & Uptime</h2>
+                <p>Le serveur est hébergé 24h/24. Des sauvegardes automatiques sont faites régulièrement pour protéger vos constructions.</p>
+                <p>Si le serveur est hors ligne, c'est probablement pour une mise à jour ou une maintenance rapide.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Minecraft Entre Potes — Fait entre potes 🦊</p>
+        </footer>
+    </div>
+
+    <script>
+        async function loadStatus() {
+            const container = document.getElementById('status-content');
+            try {
+                const response = await fetch('https://api.mcsrvstat.us/3/play.laconfreriefr.com');
+                const data = await response.json();
+
+                if (!data.online) {
+                    container.innerHTML = '<p class="offline">🔴 Le serveur est hors ligne</p>';
+                    return;
+                }
+
+                const players = data.players ? `${data.players.online} / ${data.players.max}` : '0 / 0';
+                const version = data.version || '26.3';
+                const motd = data.motd && data.motd.clean ? data.motd.clean.join('<br>') : '';
+
+                container.innerHTML = `
+                    <div class="status-grid">
+                        <div class="status-item"><span>Statut</span><strong class="online">🟢 En ligne</strong></div>
+                        <div class="status-item"><span>Joueurs</span><strong>${players}</strong></div>
+                        <div class="status-item"><span>Version</span><strong>${version}</strong></div>
+                        <div class="status-item"><span>Ping</span><strong>${data.debug && data.debug.ping ? 'Oui' : 'Non'}</strong></div>
+                    </div>
+                    ${motd ? `<div class="motd">${motd}</div>` : ''}
+                `;
+            } catch (error) {
+                container.innerHTML = '<p class="offline">⚠️ Impossible de récupérer le statut</p>';
+            }
+        }
+
+        loadStatus();
+    </script>
+</body>
+</html>
