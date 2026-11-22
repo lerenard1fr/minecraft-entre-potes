@@ -8,25 +8,44 @@
     <meta http-equiv="Expires" content="0">
     <title>Minecraft Entre Potes - Infos</title>
     <link rel="icon" type="image/png" sizes="64x64" href="images/logo-64.png">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-grid"></div>
     <div class="container">
         <header>
-            <h1><img src="images/logo-128.png" srcset="images/logo-64.png 64w, images/logo-128.png 128w, images/logo-256.png 256w, images/logo-512.png 512w" sizes="(max-width: 600px) 48px, 64px" alt="Logo Minecraft Entre Potes" class="logo"> <span class="title-minecraft">Minecraft</span> <span class="title-entre">Entre</span> <span class="title-potes">Potes</span></h1>
-            <p class="tagline">Serveur privé entre potes — Java & Bedrock</p>
-            <nav>
-                <a href="index.html">Rejoindre</a>
-                <a href="infos.html" class="active">Infos</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-brand">
+                    <img src="images/logo-64.png" alt="Logo" class="nav-logo">
+                    <span>MEP</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Rejoindre</a>
+                    <a href="infos.html" class="active">Infos</a>
+                </div>
             </nav>
+
+            <div class="hero">
+                <div class="hero-logo">
+                    <img src="images/logo-256.png" srcset="images/logo-128.png 128w, images/logo-256.png 256w, images/logo-512.png 512w" sizes="180px" alt="Logo Minecraft Entre Potes">
+                </div>
+                <h1><span class="title-minecraft">Minecraft</span> <span class="title-entre">Entre</span> <span class="title-potes">Potes</span></h1>
+                <p class="tagline">Infos, statut et plugins du serveur</p>
+                <div class="hero-badges">
+                    <span class="badge badge-blue">📡 Statut live</span>
+                    <span class="badge badge-cyan">🧩 Plugins</span>
+                    <span class="badge badge-green">💾 Sauvegardes</span>
+                </div>
+            </div>
         </header>
 
         <main>
-            <section class="live-status">
-                <h2>📡 Statut du serveur</h2>
+            <section class="live-status glass">
+                <div class="section-badge">📡 Statut</div>
+                <h2>Statut du serveur</h2>
                 <div class="status-header">
                     <p class="cache-note">Les données sont mises à jour environ toutes les 5 minutes.</p>
                     <button id="refresh-btn" class="refresh-btn">🔄 Actualiser</button>
@@ -36,7 +55,7 @@
                 </div>
             </section>
 
-            <section class="plugins">
+            <section class="plugins glass">
                 <h2>🧩 Plugins installés</h2>
                 <ul class="plugin-list">
                     <li><strong>AuthMe</strong> — connexion avec mot de passe</li>
@@ -51,7 +70,7 @@
                 </ul>
             </section>
 
-            <section class="backup-info">
+            <section class="backup-info glass">
                 <h2>💾 Sauvegardes & Uptime</h2>
                 <p>Le serveur est hébergé 24h/24. Des sauvegardes automatiques sont faites régulièrement pour protéger vos constructions.</p>
                 <p>Si le serveur est hors ligne, c'est probablement pour une mise à jour ou une maintenance rapide.</p>
