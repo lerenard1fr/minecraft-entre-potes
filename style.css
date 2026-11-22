@@ -108,6 +108,43 @@ section h2 {
     border-left: 4px solid var(--accent-light);
 }
 
+.status-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.cache-note {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.refresh-btn {
+    background: var(--surface-hover);
+    color: var(--text);
+    border: 1px solid #444;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.refresh-btn:hover {
+    background: #3a3a3a;
+    border-color: var(--accent-light);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .status-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

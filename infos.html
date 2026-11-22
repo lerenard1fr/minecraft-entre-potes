@@ -24,6 +24,10 @@
         <main>
             <section class="live-status">
                 <h2>📡 Statut du serveur</h2>
+                <div class="status-header">
+                    <p class="cache-note">Les données sont mises à jour environ toutes les 5 minutes.</p>
+                    <button id="refresh-btn" class="refresh-btn">🔄 Actualiser</button>
+                </div>
                 <div id="status-content">
                     <p class="loading">Chargement...</p>
                 </div>
@@ -85,6 +89,16 @@
                 container.innerHTML = '<p class="offline">⚠️ Impossible de récupérer le statut</p>';
             }
         }
+
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+            const btn = this;
+            btn.disabled = true;
+            btn.textContent = '⏳ Chargement...';
+            loadStatus().then(() => {
+                btn.disabled = false;
+                btn.textContent = '🔄 Actualiser';
+            });
+        });
 
         loadStatus();
     </script>
