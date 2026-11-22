@@ -386,7 +386,7 @@ code {
 
 /* Rules */
 .rules {
-    border-left: 4px solid var(--accent-red);
+    border-left: 4px solid var(--accent-green);
 }
 
 .rules ul {
@@ -399,7 +399,7 @@ code {
 }
 
 .rules li strong {
-    color: var(--accent-red);
+    color: var(--accent-green);
 }
 
 /* Plugins */
